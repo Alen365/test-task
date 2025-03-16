@@ -25,11 +25,11 @@ abstract class BaseRepository implements RepositoryInterface
 
     /**
      * @param int $id
-     * @return Author|null
+     * @return Model|null
      */
     public function getById(int $id): ?Model
     {
-        return $this->model->with('books')->findOrFail($id);
+        return $this->model->findOrFail($id);
     }
 
     public function create(BaseDTO $data): Model
